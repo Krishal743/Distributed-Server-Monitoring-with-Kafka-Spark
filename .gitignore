@@ -1,0 +1,20 @@
+# === Project-specific files to ignore ===
+team_47_broker.txt
+team_47_CPU_MEM.csv
+team_47_NET_DISK.csv
+team_47_output_1_CPU_MEM.jpeg
+team_47_output_2_NET_DISK.jpeg
+team_47_Zerotier_config.jpeg
+
+# === Common Python / Kafka / Spark ignores ===
+__pycache__/
+*.log
+*.jar
+*.class
+*.tmp
+*.pyc
+.DS_Store
+.env
+*.pid
+*.out
+/tmp/
