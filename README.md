@@ -35,9 +35,6 @@ The pipeline consists of four distinct roles operating on separate machines, int
 3.  **Consumers:** Two independent consumers subscribe to their designated topics and write the raw data to local CSV files.
 4.  **Spark Jobs:** After data ingestion, Spark jobs run on the consumer machines to perform window-based analysis and generate alert reports.
 
-+-----------------+ +----------------+ +------------------+ +--------------------+ | Producer |----->| Kafka Broker |----->| Consumer 1 |----->| Spark Job 1 | | (Reads Dataset) | | (4 Topics) | | (CPU & Mem) | | (Avg, Alerts) | +-----------------+ +----------------+ +------------------+ +--------------------+ | | v +------------------+ +--------------------+ | Consumer 2 |----->| Spark Job 2 | | (Net & Disk) | | (Max, Alerts) | +------------------+ +--------------------+
-
-
 ---
 
 ## 🛠️ Core Technologies
@@ -46,14 +43,6 @@ The pipeline consists of four distinct roles operating on separate machines, int
 * **Apache Spark:** Used for processing the collected data in batches, performing window-based aggregations and anomaly detection.
 * **ZeroTier:** Provides a virtual network to ensure seamless and secure machine-to-machine communication across different environments.
 * **Python:** The primary language for producer/consumer scripts and Spark jobs.
-
----
-
-## 📂 Project Structure
-
-A recommended structure for your repository:
-
-. ├── data/ │ └── team_47_dataset.csv # Your input dataset ├── output/ # This folder is for generated files (and is ignored by git) │ └── team_47_CPU_MEM.csv │ └── team_47_NET_DISK.csv ├── scripts/ │ ├── producer.py │ ├── consumer1_cpu_mem.py │ ├── consumer2_net_disk.py │ ├── spark_job_1.py │ ├── spark_job_2.py │ └── broker_commands.txt ├── .gitignore ├── README.md └── requirements.txt
 
 ---
 
