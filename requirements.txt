@@ -1,0 +1,6 @@
+# Core libraries for Kafka interaction and data handling
+pandas
+kafka-python
+
+# Apache Spark's Python library
+pyspark
